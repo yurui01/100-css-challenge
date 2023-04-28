@@ -1,0 +1,132 @@
+.frame {
+  width: 400px;
+  height: 400px;
+  border-radius: 2px;
+  background: #60ad85;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.menu-icon {
+  width: 80px;
+  height: 82px;
+  cursor: pointer;
+  z-index: 50;
+}
+
+.menu-icon .line-1,
+.line-2,
+.line-3 {
+  width: 80px;
+  height: 8px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.menu-icon .line-1 {
+  animation: animation-line-1-rev 0.7s ease-in-out;
+}
+
+.menu-icon .line-2 {
+  margin-top: 16px;
+  animation: animation-line-2-rev 0.7s ease-in-out;
+}
+
+.menu-icon .line-3 {
+  margin-top: 16px;
+  animation: animation-line-3-rev 0.7s ease-in-out;
+}
+
+.menu-icon.actived .line-1 {
+  animation: animation-line-1 0.7s ease-in-out forwards;
+}
+
+.menu-icon.actived .line-2 {
+  animation: animation-line-2 0.7s ease-in-out forwards;
+}
+
+.menu-icon.actived .line-3 {
+  animation: animation-line-3 0.7s ease-in-out forwards;
+}
+
+@keyframes animation-line-1 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, 24px, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(0, 24px, 0) rotate(45deg);
+  }
+}
+
+@keyframes animation-line-2 {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes animation-line-3 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -24px, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(0, -24px, 0) rotate(135deg);
+  }
+}
+
+@keyframes animation-line-1-rev {
+  0% {
+    transform: translate3d(0, 24px, 0) rotate(45deg);
+  }
+  50% {
+    transform: translate3d(0, 24px, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+@keyframes animation-line-2-rev {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes animation-line-3-rev {
+  0% {
+    transform: translate3d(0, -24px, 0) rotate(135deg);
+  }
+  50% {
+    transform: translate3d(0, -24px, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+.no-animation {
+  -webkit-animation: none !important;
+  animation: none !important;
+}
